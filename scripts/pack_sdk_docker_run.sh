@@ -3,6 +3,6 @@ set -xeuo pipefail
 
 docker run \
 	-it --rm \
-	-v "$PWD":/application \
+	-v "$PWD":/home/ae-eng/sources \
 	packsdkandroiddocker.image \
     sh -c "$@"
