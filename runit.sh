@@ -1,3 +1,3 @@
-#!/bin.bash
+#!/bin/bash
 
-docker run -it --rm -p 3633:3633 android-ndk-r16b
+docker run --name android-ndk-r16b -it --rm -p 3633:3633 android-ndk-r16b
