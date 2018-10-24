@@ -61,7 +61,7 @@ RUN echo /home/ae-eng/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_
 RUN echo /home/ae-eng/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang.dis >> /home/ae-eng/DISTCC_CMDLIST
 
 # Build a shell script because the ENTRYPOINT command doesn't like using ENV
-RUN echo "#!/bin/bash \n export DISTCC_CMDLIST=/home/ae-eng/DISTCC_CMDLIST \n distccd --no-detach --daemon --allow 192.168.0.0/16 --log-stderr -p 3633" > /home/ae-eng/entrypoint.sh
+RUN echo "#!/bin/bash \n export DISTCC_CMDLIST=/home/ae-eng/DISTCC_CMDLIST \n distccd --no-detach --daemon --allow 153.32.0.0/16 --allow 10.48.0.0/16 --allow 10.47.0.0/16 --allow 10.0.0.0/8 --allow 127.0.0.1 --allow 192.168.0.0/16 --log-stderr -p 3633" > /home/ae-eng/entrypoint.sh
 RUN chmod +x /home/ae-eng/entrypoint.sh
 
 ENTRYPOINT ["/home/ae-eng/entrypoint.sh"]
